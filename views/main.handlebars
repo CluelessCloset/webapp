@@ -124,20 +124,22 @@
 
 <!--
 -Contains main function buttons for user
--Includes Add Clothes, Make Outfit, and Search for Outfit
+-Includes Add Clothes, Make Outfit, and Search for Outfit buttons
 -->
 <div class="container">
 	<div class="main_page_btns row">
-		<div class="col-sm-4">
+		<div class="main_btn col-sm-4">
 			<a class = "btn btn-primary" data-toggle="modal" data-target="#add_clothes_modal">Add Clothes</a>
 		</div>
-		<div class="col-sm-4">
+		<div class="main_btn col-sm-4">
 			<a class = "btn btn-primary" onClick = "randomizeOutfit()">Make Outfit</a>
 		</div>
-		<div class="col-sm-4">
+		<div class="main_btn col-sm-4">
 			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="text" placeholder="Enter an outfit">
-				<button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+				<div class="input-group input_search_combo">
+					<input class="form-control search_outfit_input" id="search_outfit_input" placeholder="" type="text">
+					<span class="input-group-addon btn btn-primary" type="button">Search</span>
+				</div>
 			</form>
 		</div>
 	</div>

@@ -1,3 +1,9 @@
+/*Default colors are different for this version of bootstrap so had to be initialized*/
+body{
+	background-color: white;
+	color: black;
+}
+
 .homepage_img{
 	width: 50%;
 	height: 50%;
@@ -19,8 +25,13 @@
 	text-align: center;
 }
 
+/*Resizes carousel images so that they are only as wide as the image given*/
 .carousel-inner > .item > img {
     margin: 0 auto;
+}
+
+.input_search_combo{
+	max-width: 10%:
 }
 
 .col-sm-4{
@@ -46,11 +57,6 @@
     background-color: #448aff;
 }
 
-/*Take away !important at some point*/
-.navbar a{
-	color: white !important;
-}
-
 .btn-primary{
 	background-color: #448aff;
 }
@@ -58,3 +64,21 @@
 .btn-primary: hover{
 	background-color: #1E55B2;
 }
+
+.main_btn{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.search_outfit_btn{
+	display: inline-block;
+}
+
+.search_outfit_input{
+	color: #666;
+}
+/*Remove !important at some point*/
+a:hover{
+	color: #EEE !important;
+}
+
