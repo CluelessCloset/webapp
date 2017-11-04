@@ -1,0 +1,237 @@
+
+
+
+<!--Carousels of different sections of clothes-->
+
+<!--Carousel for accessories-->
+<div class = "clothes_carousel">
+	<h3>Accessory</h3>
+	<div id="accessories_slides" class="carousel slide" data-ride="carousel" data-interval="false">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#accessories_slides" data-slide-to="0" class="active"></li>
+			<li data-target="#accessories_slides" data-slide-to="1"></li>
+			<li data-target="#accessories_slides" data-slide-to="2"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="http://via.placeholder.com/350x150" alt="accessory">
+			</div>
+
+			<div class="item">
+				<img src="http://via.placeholder.com/350x150" alt="accessory">
+			</div>
+
+			<div class="item">
+				<img src="http://via.placeholder.com/350x150" alt="accessory">
+			</div>
+		</div>
+
+		<!-- Left and right controls -->
+		<a class="left carousel-control" href="#accessories_slides" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#accessories_slides" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+</div>
+
+
+
+<!--Carousel for shirts-->
+<div class = "clothes_carousel">
+	<h3>Top</h3>
+	<div id="shirts_slides" class="carousel slide" data-ride="carousel" data-interval="false">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#shirts_slides" data-slide-to="0" class="active"></li>
+			<li data-target="#shirts_slides" data-slide-to="1"></li>
+			<li data-target="#shirts_slides" data-slide-to="2"></li>
+		</ol>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="http://via.placeholder.com/350x150" alt="shirt">
+			</div>
+
+			<div class="item">
+				<img src="http://via.placeholder.com/350x150" alt="shirt">
+			</div>
+
+			<div class="item">
+				<img src="http://via.placeholder.com/350x150" alt="shirt">
+			</div>
+		</div>
+
+		<!-- Left and right controls -->
+		<a class="left carousel-control" href="#shirts_slides" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#shirts_slides" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+			<span class="sr-only">Next</span>
+		</a>
+</div>
+
+
+
+
+<!--Carousel for pants-->
+<div class = "clothes_carousel">
+	<h3>Bottom</h3>
+	<div id="pants_slides" class="carousel slide" data-ride="carousel" data-interval="false">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#pants_slides" data-slide-to="0" class="active"></li>
+			<li data-target="#pants_slides" data-slide-to="1"></li>
+			<li data-target="#pants_slides" data-slide-to="2"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active">
+			<img src="http://via.placeholder.com/350x150" alt="Los Angeles">
+		</div>
+
+		<div class="item">
+			<img src="http://via.placeholder.com/350x150" alt="Chicago">
+		</div>
+
+		<div class="item">
+			<img src="http://via.placeholder.com/350x150" alt="New York">
+		</div>
+	</div>
+
+	<!-- Left and right controls -->
+	<a class="left carousel-control" href="#pants_slides" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+
+	<a class="right carousel-control" href="#pants_slides" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>
+
+
+
+<!--
+-Contains main function buttons for user
+-Includes Add Clothes, Make Outfit, and Search for Outfit buttons
+-->
+<div class="container">
+	<div class="main_page_btns row">
+		<div class="main_btn col-sm-4">
+			<a class = "btn btn-primary" data-toggle="modal" data-target="#add_clothes_modal">Add Clothes</a>
+		</div>
+		<div class="main_btn col-sm-4">
+			<a class = "btn btn-primary" onClick = "randomizeOutfit()">Make Outfit</a>
+		</div>
+		<div class="main_btn col-sm-4">
+			<a class = "btn btn-primary" data-toggle="modal" data-target="#search_outfit_modal">Search Outfits</a>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Modal that pops up when Search Outfit selected-->
+<div id="search_outfit_modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Outfit Search</h4>
+			</div>
+			
+			<div class="modal-body">
+				<form class="form-inline my-2 my-lg-0">
+					<label class = "search_for_outfit_form_label">Search for an Outfit:</label>
+					<input class="form-control search_outfit_input" id="search_outfit_input" placeholder="" type="text">
+					<button class="btn btn-primary" type="button"><i class="fa fa-paper-plane" aria-hidden="true"></i></buttton>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Modal that pops up when Add Clothes selected-->
+<div id="add_clothes_modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Add Clothes</h4>
+			</div>
+			<div class="modal-body">
+			
+				<!--Form that adds clothes to database-->
+				<form action = "/user/add_clothes" enctype="multipart/form-data" method = "post">
+					<div class="form-group">
+						<label>Clothing Name: </label>
+						<input type="text" class="form-control" name="clothing_name">
+					</div>
+					<div class="form-group">
+						<label>Clothing type:</label>
+						<select name="clothing_type" class="form-control" id="clothing_type">
+							<option disabled selected value></option>
+							<option id="accessory" name="accessory">Accessory</option>
+							<option id="shirt" name="shirt">Top</option>
+							<option id="pants" name="pants">Bottom</option>
+					  </select>
+					</div>
+					<label>Specific Description:</label>
+					<label class="radio-inline">
+						<input type="radio" value="10" name="warmth_rating">Jacket
+					</label>
+					<label class="radio-inline">
+						<input type="radio" value="7" name="warmth_rating">Sweatshirt
+					</label>
+					<label class="radio-inline">
+						<input type="radio" value="5" name="warmth_rating">Long-Sleeve Shirt
+					</label>
+					<label class="radio-inline">
+						<input type="radio" value="2" name="warmth_rating">T-Shirt
+					</label>
+					
+					<label>Water Resistant?</label>
+					<label class="radio-inline">
+						<input type="radio" value="true" name="water_resistant">Yes
+					</label>
+					<label class="radio-inline">
+						<input type="radio" value="false" name="water_resistant">No
+					</label>
+					
+					<div class="form-group">
+						<label>Picture:</label>
+						<br>
+						<label class="btn btn-default">
+							<input name="img_url" type="file" hidden>
+						</label>
+					</div>
+					<button class="btn btn-primary my-2 my-sm-0" type="submit">Add</button>
+					
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/main_scripts.js"></script>

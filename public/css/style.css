@@ -1,1 +1,83 @@
+/*Get rid of !important at some point*/
+.navbar a{
+	color: white !important;
+}
+
+.navbar a:hover{
+	color: #DCDCDC	!important;
+}
+
+.homepage_img{
+	width: 50%;
+	height: 50%;
+	margin: auto;
+	display: block;
+	max-width: 400px;
+	max-height: 400px;
+}
+
+.options_container{
+	text-align: center;
+}
+
+.opt_btn{
+	margin: 5px;
+}
+
+.search_for_outfit_form_label{
+	display: block;
+}
+
+.clothes_carousel{
+	text-align: center;
+}
+
+/*Resizes carousel images so that they are only as wide as the image given*/
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.input_search_combo{
+	max-width: 10%:
+}
+
+.col-sm-4{
+	text-align: center;
+}
+
+.main_page_btns{
+	margin-bottom: 20px;
+	background-color: #F5F5F5;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+.clothing_carousel{
+	display: block;
+}
+
+.carousel{
+	display: inline-block;
+}
+
+.navbar-default{
+    background-color: #448aff;
+}
+
+.btn-primary{
+	background-color: #448aff;
+}
+
+.btn-primary: hover{
+	background-color: #1E55B2;
+}
+
+.main_btn{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.search_outfit_btn{
+	display: inline-block;
+}
 

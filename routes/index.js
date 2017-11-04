@@ -1,9 +1,16 @@
-var express = require('express');
-var router = express.Router();
+module.exports = function(app) {
+    var index = require('../controllers/index.controller');
 
-//Get homepage
-router.get('/', function(req, res){
-	res.render('index');
-});
+    //Get homepage
+    app.get('/', index.render);
+    
+    //Get login page
+    app.get('/login', function(req, res){
+	    res.render('login');
+    });
 
-module.exports = router;
+    //Get register page
+    app.get('/register', function(req, res){
+	    res.render('register');
+    });
+};
