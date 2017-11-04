@@ -135,10 +135,12 @@
 			<a class = "btn btn-primary" onClick = "randomizeOutfit()">Make Outfit</a>
 		</div>
 		<div class="main_btn col-sm-4">
-			<a class = "btn btn-primary" data-toggle="modal" data-target="#search_outfit_modal">Add Clothes</a>
+			<a class = "btn btn-primary" data-toggle="modal" data-target="#search_outfit_modal">Search Outfits</a>
 		</div>
 	</div>
 </div>
+
+
 
 <!-- Modal that pops up when Search Outfit selected-->
 <div id="search_outfit_modal" class="modal fade" role="dialog">
@@ -176,28 +178,53 @@
 				<h4 class="modal-title">Add Clothes</h4>
 			</div>
 			<div class="modal-body">
-				<form>
+			
+				<!--Form that adds clothes to database-->
+				<form action = "/user/add_clothes" method = "post">
 					<div class="form-group">
 						<label>Clothing Name: </label>
-						<input class="form-control type="text">
+						<input type="text" class="form-control" name="clothing_name">
 					</div>
 					<div class="form-group">
 						<label>Clothing type:</label>
-						<select class="form-control" id="clothing_type">
+						<select name="clothing_type" class="form-control" id="clothing_type">
 							<option disabled selected value></option>
 							<option id="accessory" name="accessory">Accessory</option>
-							<option id="shirt" name="shirt">Shirt</option>
-							<option id="pants" name="pants">Pants</option>
+							<option id="shirt" name="shirt">Top</option>
+							<option id="pants" name="pants">Bottom</option>
 					  </select>
 					</div>
+					<label>Specific Description:</label>
+					<label class="radio-inline">
+						<input type="radio" value="10" name="warmth_rating">Jacket
+					</label>
+					<label class="radio-inline">
+						<input type="radio" value="7" name="warmth_rating">Sweatshirt
+					</label>
+					<label class="radio-inline">
+						<input type="radio" value="5" name="warmth_rating">Long-Sleeve Shirt
+					</label>
+					<label class="radio-inline">
+						<input type="radio" value="2" name="warmth_rating">T-Shirt
+					</label>
+					
+					<label>Water Resistant?</label>
+					<label class="radio-inline">
+						<input type="radio" value="true" name="water_resistant">Yes
+					</label>
+					<label class="radio-inline">
+						<input type="radio" value="false" name="water_resistant">No
+					</label>
+					
 					<div class="form-group">
 						<label>Picture:</label>
 						<br>
 						<label class="btn btn-default">
-							<input type="file" hidden>
+							<input name="img_url" type="file" hidden>
 						</label>
 					</div>
 					<button class="btn btn-primary my-2 my-sm-0" type="submit">Add</button>
+					
 				</form>
 			</div>
 			<div class="modal-footer">
