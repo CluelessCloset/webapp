@@ -50,3 +50,8 @@ exports.delete = function(req, res, next) {
         }
     })
 };
+
+exports.renderMain = function(req, res) {
+    res.render('main');
+}
+

@@ -1,11 +1,14 @@
-var users = require('../controllers/users.controller');
+var users = require('../controllers/users.controller'),
+    authController = require('../controllers/auth.controller');
 
 module.exports = function(app) {
-    app.route('/users').post(users.create);
+    app.route('/users').post(users.create).get(authController.isAuthenticated, users.renderMain);
 
     app.route('/users/:userId').get(users.read).put(users.update).delete(users.delete);
 
-    app.param('userId', users.userByID);;
+    app.param('userId', users.userByID);
+
+    app.route('/users/login').post(authController.isAuthenticated, users.renderMain);
 }
 
 // var users = require('../controllers/users.controller'),
