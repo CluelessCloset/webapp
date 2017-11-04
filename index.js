@@ -33,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/user', user);
 
+
 // Sets port to either the preset environment port
 // If no preset, then defaults to port 3000
 app.set('port', (process.env.PORT || 3000));
