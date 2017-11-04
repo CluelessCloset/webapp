@@ -38,7 +38,10 @@ module.exports = function() {
     }));
 
     require('../routes/index.js')(app);
+    require('../routes/client.js')(app);
     require('../routes/users.js')(app);
+    require('../routes/cloths.js')(app);
+    require('../routes/hanger.js')(app);
 
     return app;
 };

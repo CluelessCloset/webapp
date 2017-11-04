@@ -3,6 +3,9 @@ var config = require('./config'),
 
 module.exports = function() {
     var db = mongoose.connect(config.db);
-    require('../models/users.model');
+    require('../models/users.module');
+    require('../models/client.module');
+    require('../models/code.module');
+    require('../models/token.module');
     return db;
 };
