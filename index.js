@@ -12,6 +12,7 @@ var mongoose = require('mongoose');
 
 //Routes where functions for pages come from
 var routes = require('./routes/index');
+var user = require('./routes/user');
 
 // Initializes App
 var app = express();
@@ -30,6 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/user', user);
 
 // Sets port to either the preset environment port
 // If no preset, then defaults to port 3000

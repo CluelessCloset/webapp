@@ -1,1 +1,19 @@
+.homepage_img{
+	width: 50%;
+	height: 50%;
+	margin: auto;
+	display: block;
+	max-width: 400px;
+	max-height: 400px;
+}
 
+.homepage_img_container{
+}
+
+.options_container{
+	text-align: center;
+}
+
+.opt_btn{
+	margin: 5px;
+}
