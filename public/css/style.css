@@ -1,7 +1,6 @@
-/*Default colors are different for this version of bootstrap so had to be initialized*/
-body{
-	background-color: white;
-	color: black;
+/*Get rid of !important at some point*/
+.navbar a{
+	color: white !important;
 }
 
 .homepage_img{
@@ -72,13 +71,5 @@ body{
 
 .search_outfit_btn{
 	display: inline-block;
-}
-
-.search_outfit_input{
-	color: #666;
-}
-/*Remove !important at some point*/
-a:hover{
-	color: #EEE !important;
 }
 

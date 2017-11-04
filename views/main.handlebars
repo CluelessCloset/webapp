@@ -135,12 +135,31 @@
 			<a class = "btn btn-primary" onClick = "randomizeOutfit()">Make Outfit</a>
 		</div>
 		<div class="main_btn col-sm-4">
-			<form class="form-inline my-2 my-lg-0">
-				<div class="input-group input_search_combo">
-					<input class="form-control search_outfit_input" id="search_outfit_input" placeholder="" type="text">
-					<span class="input-group-addon btn btn-primary" type="button">Search</span>
-				</div>
-			</form>
+			<a class = "btn btn-primary" data-toggle="modal" data-target="#search_outfit_modal">Add Clothes</a>
+		</div>
+	</div>
+</div>
+
+<!-- Modal that pops up when Search Outfit selected-->
+<div id="search_outfit_modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Outfit Search</h4>
+			</div>
+			
+			<div class="modal-body">
+				<form class="form-inline my-2 my-lg-0">
+					<label>Search for an Outfit:</label>
+						<input class="form-control search_outfit_input" id="search_outfit_input" placeholder="" type="text">
+						<button class="btn btn-primary" type="button">Search</buttton>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
 		</div>
 	</div>
 </div>
