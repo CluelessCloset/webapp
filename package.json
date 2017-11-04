@@ -20,6 +20,7 @@
     "express-validator": "^4.3.0",
     "mongodb": "*",
     "mongoose": "*",
+    "multer": "^1.3.0",
     "passport": "*",
     "passport-http": "*",
     "passport-local": "*"

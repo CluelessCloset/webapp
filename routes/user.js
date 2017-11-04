@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
+var multer = require('multer');
 
 var Clothes = require('../models/clothes');
 
@@ -11,7 +13,9 @@ router.get('/', function(req, res){
 	res.render('main');
 });
 
-router.post('/add_clothes', function(req, res){
+var upload = multer({ dest: 'public/clothes_images'});
+
+router.post('/add_clothes', upload.single('img_url'), function(req, res){
 	//Gets all of form input and stores it into variables
 	var name = req.body.clothing_name;
 	var clothing_type = req.body.clothing_type;
@@ -31,7 +35,7 @@ router.post('/add_clothes', function(req, res){
 	req.checkBody('water_resistant', 'Please select water resistancy!');
 	
 	var errors = req.validationErrors();
-	
+		
 	if(errors){
 		res.render('/user', {
 			errors: errors,
@@ -42,7 +46,7 @@ router.post('/add_clothes', function(req, res){
 			clothing_type: clothing_type,
 			warmth_rating: warmth_rating,
 			water_resistant : water_resistant,
-			image: image,
+			image: req.file.filename,
 			email: email,
 		});
 		
