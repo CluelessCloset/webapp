@@ -1,21 +1,11 @@
-<div class="container">
-	<div class="main_page_btns row">
-		<div class="col-sm-4">
-			<a class = "btn btn-primary">Add Clothes</a>
-		</div>
-		<div class="col-sm-4">
-			<a class = "btn btn-primary" onClick = "randomizeOutfit()">Make Outfit</a>
-		</div>
-		<div class="col-sm-4">
-			<a class = "btn btn-primary">Search</a>
-		</div>
-	</div>
-</div>
+
+
 
 <!--Carousels of different sections of clothes-->
 
 <!--Carousel for accessories-->
 <div class = "clothes_carousel">
+	<h3>Accessory</h3>
 	<div id="accessories_slides" class="carousel slide" data-ride="carousel" data-interval="false">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -27,15 +17,15 @@
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="http://via.placeholder.com/350x150" alt="Los Angeles">
+				<img src="http://via.placeholder.com/350x150" alt="accessory">
 			</div>
 
 			<div class="item">
-				<img src="http://via.placeholder.com/350x150" alt="Chicago">
+				<img src="http://via.placeholder.com/350x150" alt="accessory">
 			</div>
 
 			<div class="item">
-				<img src="http://via.placeholder.com/350x150" alt="New York">
+				<img src="http://via.placeholder.com/350x150" alt="accessory">
 			</div>
 		</div>
 
@@ -53,8 +43,9 @@
 
 
 
-<!--Carousel for accessories-->
+<!--Carousel for shirts-->
 <div class = "clothes_carousel">
+	<h3>Top</h3>
 	<div id="shirts_slides" class="carousel slide" data-ride="carousel" data-interval="false">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -62,19 +53,18 @@
 			<li data-target="#shirts_slides" data-slide-to="1"></li>
 			<li data-target="#shirts_slides" data-slide-to="2"></li>
 		</ol>
-
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner">
 			<div class="item active">
-				<img src="http://via.placeholder.com/350x150" alt="Los Angeles">
+				<img src="http://via.placeholder.com/350x150" alt="shirt">
 			</div>
 
 			<div class="item">
-				<img src="http://via.placeholder.com/350x150" alt="Chicago">
+				<img src="http://via.placeholder.com/350x150" alt="shirt">
 			</div>
 
 			<div class="item">
-				<img src="http://via.placeholder.com/350x150" alt="New York">
+				<img src="http://via.placeholder.com/350x150" alt="shirt">
 			</div>
 		</div>
 
@@ -92,8 +82,9 @@
 
 
 
-<!--Carousel for accessories-->
+<!--Carousel for pants-->
 <div class = "clothes_carousel">
+	<h3>Bottom</h3>
 	<div id="pants_slides" class="carousel slide" data-ride="carousel" data-interval="false">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -127,6 +118,72 @@
 		<span class="glyphicon glyphicon-chevron-right"></span>
 		<span class="sr-only">Next</span>
 	</a>
+</div>
+
+
+
+<!--
+-Contains main function buttons for user
+-Includes Add Clothes, Make Outfit, and Search for Outfit
+-->
+<div class="container">
+	<div class="main_page_btns row">
+		<div class="col-sm-4">
+			<a class = "btn btn-primary" data-toggle="modal" data-target="#add_clothes_modal">Add Clothes</a>
+		</div>
+		<div class="col-sm-4">
+			<a class = "btn btn-primary" onClick = "randomizeOutfit()">Make Outfit</a>
+		</div>
+		<div class="col-sm-4">
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="text" placeholder="Enter an outfit">
+				<button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Modal that pops up when Add Clothes selected-->
+<div id="add_clothes_modal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Add Clothes</h4>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="form-group">
+						<label>Clothing Name: </label>
+						<input class="form-control type="text">
+					</div>
+					<div class="form-group">
+						<label>Clothing type:</label>
+						<select class="form-control" id="clothing_type">
+							<option disabled selected value></option>
+							<option id="accessory" name="accessory">Accessory</option>
+							<option id="shirt" name="shirt">Shirt</option>
+							<option id="pants" name="pants">Pants</option>
+					  </select>
+					</div>
+					<div class="form-group">
+						<label>Picture:</label>
+						<br>
+						<label class="btn btn-default">
+							<input type="file" hidden>
+						</label>
+					</div>
+					<button class="btn btn-primary my-2 my-sm-0" type="submit">Add</button>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
 </div>
 
 <script src="js/main_scripts.js"></script>
