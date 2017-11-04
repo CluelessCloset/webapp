@@ -9,19 +9,22 @@
   "author": "Team Party Parrot",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2",
     "bcryptjs": "*",
-    "body-parser": "*",
-    "connect-flash": "*",
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.1",
+    "express": "^4.16.2",
+    "express-graphql": "^0.6.11",
     "express-handlebars": "*",
     "express-messages": "*",
-    "express-session": "*",
+    "express-session": "^1.15.6",
     "express-validator": "*",
+    "graphql": "^0.11.7",
+    "jsonwebtoken": "^8.1.0",
     "mongodb": "*",
-    "mongoose": "*",
-    "passport": "*",
+    "mongoose": "^4.13.0",
+    "passport": "^0.4.0",
     "passport-http": "*",
-	"passport-local": "*"
+    "passport-local": "^1.0.0"
   }
 }
