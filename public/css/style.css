@@ -3,6 +3,10 @@
 	color: white !important;
 }
 
+.navbar a:hover{
+	color: #DCDCDC	!important;
+}
+
 .homepage_img{
 	width: 50%;
 	height: 50%;
@@ -18,6 +22,10 @@
 
 .opt_btn{
 	margin: 5px;
+}
+
+.search_for_outfit_form_label{
+	display: block;
 }
 
 .clothes_carousel{
