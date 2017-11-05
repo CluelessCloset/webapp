@@ -12,9 +12,7 @@ router.get('/', authController.isAuthenticated, function(req, res){
 	var accessories_list = [];
 	var tops_list = [];
 	var bottoms_list = [];
-	
-	console.log(req.session.email);
-	
+		
 	var user_clothes = Clothes.find({"owner_email": req.session.email}, function(err, results){
 		//Accounts for when there are zero results
 		if (results.length > 0){

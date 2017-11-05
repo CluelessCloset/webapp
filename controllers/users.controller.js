@@ -6,6 +6,8 @@ exports.create = function(req, res, next) {
         if (err) {
             return next(err);
         } else {
+			console.log("Initial req.session.email value: " + req.body.email);
+			req.session.email = req.body.email;
             res.json(user);
         }
     });
@@ -52,8 +54,11 @@ exports.delete = function(req, res, next) {
 };
 
 exports.renderMain = function(req, res) {
-    req.session.email = req.body.email;
+	if (req.body.email){
+		req.session.email = req.body.email;
+		console.log("req.session.email changed to " + req.body.email)
+    }
     res.redirect('/user/');
-    
-    
 }
+
+
