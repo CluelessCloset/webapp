@@ -67,13 +67,15 @@ router.get('/', authController.isAuthenticated, function(req, res){
 
 var upload = multer({ dest: 'public/clothes_images'});
 
-router.post('/add_clothes', authController.isAuthenticated, upload.single('img_url'), function(req, res){
+router.post('/add_clothes', upload.single('img_url'), function(req, res){	
+	console.log(req.body);
+	
 	//Gets all of form input and stores it into variables
 	var name = req.body.clothing_name;
 	var clothing_type = req.body.clothing_type;
-	var warmth_rating = req.body.warmth_rating;
+	var warmth_rating = req.body.warmthInputSlider;
 	var water_resistant = req.body.water_resistant;
-
+	
 	req.checkBody('name', 'Clothing name is required!');
 	req.checkBody('clothing_type', 'Clothing type is required!');
 	req.checkBody('warmth_rating', 'Please select a warmth rating!');
