@@ -1,3 +1,20 @@
+<!--
+-Contains main function buttons for user
+-Includes Add Clothes, Make Outfit, and Search for Outfit buttons
+-->
+<div class="container">
+	<div class="main_page_btns row">
+		<div class="main_btn col-sm-4">
+			<a class = "btn btn-primary" data-toggle="modal" data-target="#add_clothes_modal">Add Clothes</a>
+		</div>
+		<div class="main_btn col-sm-4">
+			<a class = "btn btn-primary" onClick = "randomizeOutfit()">Make Outfit</a>
+		</div>
+		<div class="main_btn col-sm-4">
+			<a class = "btn btn-primary" data-toggle="modal" data-target="#search_outfit_modal">Search Outfits</a>
+		</div>
+	</div>
+</div>
 
 
 
@@ -21,11 +38,11 @@
 		</div>
 
 		<!-- Left and right controls -->
-		<a class="left carousel-control" href="#accessories_slides" data-slide="prev">
+		<a class="left carousel-control" onClick = "changeName({{this.name}})" href="#accessories_slides" data-slide="prev">
 			<span class="glyphicon glyphicon-chevron-left"></span>
 			<span class="sr-only">Previous</span>
 		</a>
-		<a class="right carousel-control" href="#accessories_slides" data-slide="next">
+		<a class="right carousel-control" onClick = "" href="#accessories_slides" data-slide="next">
 			<span class="glyphicon glyphicon-chevron-right"></span>
 			<span class="sr-only">Next</span>
 		</a>
@@ -95,27 +112,6 @@
 </div>
 
 
-
-<!--
--Contains main function buttons for user
--Includes Add Clothes, Make Outfit, and Search for Outfit buttons
--->
-<div class="container">
-	<div class="main_page_btns row">
-		<div class="main_btn col-sm-4">
-			<a class = "btn btn-primary" data-toggle="modal" data-target="#add_clothes_modal">Add Clothes</a>
-		</div>
-		<div class="main_btn col-sm-4">
-			<a class = "btn btn-primary" onClick = "randomizeOutfit()">Make Outfit</a>
-		</div>
-		<div class="main_btn col-sm-4">
-			<a class = "btn btn-primary" data-toggle="modal" data-target="#search_outfit_modal">Search Outfits</a>
-		</div>
-	</div>
-</div>
-
-
-
 <!-- Modal that pops up when Search Outfit selected-->
 <div id="search_outfit_modal" class="modal fade" role="dialog">
 	<div class="modal-dialog">
@@ -166,21 +162,11 @@
 							<option id="accessory" name="accessory">Accessory</option>
 							<option id="shirt" name="shirt">Top</option>
 							<option id="pants" name="pants">Bottom</option>
-					  </select>
+						</select>
 					</div>
 					<label>Specific Description:</label>
-					<label class="radio-inline">
-						<input type="radio" value="10" name="warmth_rating">Jacket
-					</label>
-					<label class="radio-inline">
-						<input type="radio" value="7" name="warmth_rating">Sweatshirt
-					</label>
-					<label class="radio-inline">
-						<input type="radio" value="5" name="warmth_rating">Long-Sleeve Shirt
-					</label>
-					<label class="radio-inline">
-						<input type="radio" value="2" name="warmth_rating">T-Shirt
-					</label>
+					
+					<input name="warmthInputSlider" id="warmthInputSlider" data-slider-id='warmthInputSlider' type="range" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="5"/>
 					
 					<label>Water Resistant?</label>
 					<label class="radio-inline">

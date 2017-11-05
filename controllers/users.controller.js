@@ -52,5 +52,8 @@ exports.delete = function(req, res, next) {
 };
 
 exports.renderMain = function(req, res) {
+    req.session.email = req.body.email;
     res.redirect('/user/');
+    
+    
 }
