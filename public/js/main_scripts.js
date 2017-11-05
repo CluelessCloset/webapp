@@ -16,7 +16,3 @@ function randomizeOutfit(){
 	console.log();
 }
 
-//Changes name above clothing article based on active picture
-function changeName(name){
-	$(".")
-}

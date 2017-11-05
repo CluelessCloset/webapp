@@ -3,11 +3,12 @@ var router = express.Router();
 var fs = require('fs');
 var multer = require('multer');
 
-var Clothes = require('../models/clothes');
+var authController = require('../controllers/auth.controller');
 
+var Clothes = require('../models/clothes');
 //Get main page once logged in
 //From here all available actions are able to be viewed
-router.get('/', function(req, res){
+router.get('/', authController.isAuthenticated, function(req, res){
 	var accessories_list = [];
 	var tops_list = [];
 	var bottoms_list = [];
@@ -49,14 +50,13 @@ router.get('/', function(req, res){
 						tops_list: tops_list,
 						bottoms_list: bottoms_list,
 					}
-					
-					console.log(req.session.email);
-					
+										
 					res.render('main', context);
 				}
 			}
 		}else{
 			var context = {
+				isAuthenticated: true,
 			}
 
 			res.render('main', context);
@@ -66,7 +66,7 @@ router.get('/', function(req, res){
 
 var upload = multer({ dest: 'public/clothes_images'});
 
-router.post('/add_clothes', upload.single('img_url'), function(req, res){
+router.post('/add_clothes', authController.isAuthenticated, upload.single('img_url'), function(req, res){
 	//Gets all of form input and stores it into variables
 	var name = req.body.clothing_name;
 	var clothing_type = req.body.clothing_type;
@@ -102,5 +102,6 @@ router.post('/add_clothes', upload.single('img_url'), function(req, res){
 		res.redirect('/user');
 	}
 });
+
 
 module.exports = router;
