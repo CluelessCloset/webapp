@@ -17,10 +17,10 @@ function randomizeOutfit(){
 }
 
 window.onLoad = function(){
-		// With JQuery
-		$('#warmthInputSlider').slider({
-			formatter: function(value) {
-				return 'Current value: ' + value;
-			}
-		});
+
+}
+
+function updateWarmthValueRange(){
+	console.log("Value: " + $('#warmthInputSlider').val());
+	$('#warmthInputSlider').text($('#warmthInputSlider').val());
 }
