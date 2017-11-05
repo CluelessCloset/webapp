@@ -15,3 +15,8 @@ function randomizeOutfit(){
 	$("#pants_slides").carousel(getRandomInt(0, total_pants));
 	console.log();
 }
+
+//Changes name above clothing article based on active picture
+function changeName(name){
+	$(".")
+}

@@ -12,7 +12,6 @@ router.get('/', function(req, res){
 	var tops_list = [];
 	var bottoms_list = [];
 	var user_clothes = Clothes.find({"owner_email": "dan.kirichok@gmail.com" }, function(err, results){
-		console.log(results);
 		//Accounts for when there are zero results
 		if (results.length > 0){
 			for (var i = 0; i < results.length; i++){
@@ -50,7 +49,9 @@ router.get('/', function(req, res){
 						tops_list: tops_list,
 						bottoms_list: bottoms_list,
 					}
-		
+					
+					console.log(req.session.email);
+					
 					res.render('main', context);
 				}
 			}
@@ -71,7 +72,6 @@ router.post('/add_clothes', upload.single('img_url'), function(req, res){
 	var clothing_type = req.body.clothing_type;
 	var warmth_rating = req.body.warmth_rating;
 	var water_resistant = req.body.water_resistant;
-	//var email = ;
 	
 	req.checkBody('name', 'Clothing name is required!');
 	req.checkBody('clothing_type', 'Clothing type is required!');
@@ -90,7 +90,7 @@ router.post('/add_clothes', upload.single('img_url'), function(req, res){
 			warmth_rating: warmth_rating,
 			water_resistant : water_resistant,
 			image: req.file.filename,
-			owner_email: "dan.kirichok@gmail.com",
+			owner_email: req.session.email,
 		});
 		
 		Clothes.createClothes(newClothes, function(err, clothes){
