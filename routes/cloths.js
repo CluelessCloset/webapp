@@ -1,5 +1,7 @@
-var darksky = require("../controllers/darksky.controller");
+var darksky = require("../controllers/darksky.controller"),
+    clarafai = require("../controllers/clarafai.controller");
 
 module.exports = function (app) {
-    app.route('/cloths').get(darksky.getWeather);
+    app.route('/weatherCloths').get(darksky.getWeather);
+    app.route('/styleCloths').get(clarafai.getUgly);
 }

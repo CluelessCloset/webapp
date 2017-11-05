@@ -6,10 +6,10 @@ exports.create = function(req, res, next) {
         if (err) {
             return next(err);
         } else {
-            res.json(user);
+            res.json(delete user["password"]);
         }
     });
-};
+}
 
 exports.read = function(req, res) {
     re.json(req.user);
@@ -54,4 +54,3 @@ exports.delete = function(req, res, next) {
 exports.renderMain = function(req, res) {
     res.render('main');
 }
-

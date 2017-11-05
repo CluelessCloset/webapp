@@ -7,5 +7,6 @@ module.exports = function() {
     require('../models/client.module');
     require('../models/code.module');
     require('../models/token.module');
+    require('../models/hanger.module');
     return db;
 };
