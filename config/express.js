@@ -5,7 +5,8 @@ var express = require('express'),
     exphbs = require('express-handlebars'),
     passport = require('passport'),
     flash = require('connect-flash'),
-    session = require('express-session');
+    session = require('express-session'),
+	expressValidator = require('express-validator');
 
 module.exports = function() {
     var app = express();
@@ -13,13 +14,7 @@ module.exports = function() {
     app.use(bodyParser.urlencoded({
        extended: true
     }));
-
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: false }));
-    app.use(cookieParser());
-
-    app.use(flash());
-
+	
     // View Engine
     app.set('views', path.join(__dirname, '../views'));
     app.engine('handlebars', exphbs({defaultLayout:'layout'}));

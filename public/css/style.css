@@ -81,3 +81,7 @@
 	display: inline-block;
 }
 
+.clothes_img{
+	max-height: 200px;
+	max-width: 70%;
+}
