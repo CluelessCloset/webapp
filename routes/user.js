@@ -69,6 +69,7 @@ var upload = multer({ dest: 'public/clothes_images'});
 
 router.post('/add_clothes', upload.single('img_url'), function(req, res){	
 	//Gets all of form input and stores it into variables
+	console.log(req.body);
 	var name = req.body.clothing_name;
 	var clothing_type = req.body.clothing_type;
 	var warmth_rating = req.body.warmthInputSlider;
@@ -91,7 +92,7 @@ router.post('/add_clothes', upload.single('img_url'), function(req, res){
 			warmth: req.body.warmthInputSlider,
 			rain_resistant : water_resistant,
 			image: req.file.filename,
-			owner_email: req.session.email,
+			owner_email: (req.session.email)? req.session.email : req.body.email,
 		});
 
 		Clothes.createClothes(newClothes, function(err, clothes){
