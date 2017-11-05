@@ -68,6 +68,11 @@
 	background-color: #448aff;
 }
 
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}
+
 .btn-primary: hover{
 	background-color: #1E55B2;
 }

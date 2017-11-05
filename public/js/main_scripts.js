@@ -16,3 +16,11 @@ function randomizeOutfit(){
 	console.log();
 }
 
+window.onLoad = function(){
+		// With JQuery
+		$('#warmthInputSlider').slider({
+			formatter: function(value) {
+				return 'Current value: ' + value;
+			}
+		});
+}

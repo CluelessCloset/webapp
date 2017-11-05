@@ -12,7 +12,10 @@ router.get('/', authController.isAuthenticated, function(req, res){
 	var accessories_list = [];
 	var tops_list = [];
 	var bottoms_list = [];
-	var user_clothes = Clothes.find({"owner_email": "dan.kirichok@gmail.com" }, function(err, results){
+	
+	console.log(req.session.email);
+	
+	var user_clothes = Clothes.find({"owner_email": req.session.email}, function(err, results){
 		//Accounts for when there are zero results
 		if (results.length > 0){
 			for (var i = 0; i < results.length; i++){
@@ -56,7 +59,7 @@ router.get('/', authController.isAuthenticated, function(req, res){
 			}
 		}else{
 			var context = {
-				isAuthenticated: true,
+				
 			}
 
 			res.render('main', context);
@@ -102,6 +105,5 @@ router.post('/add_clothes', authController.isAuthenticated, upload.single('img_u
 		res.redirect('/user');
 	}
 });
-
 
 module.exports = router;
