@@ -7,16 +7,15 @@ var ClothesSchema = mongoose.Schema({
 	
 	owner_email: {
 		type: String,
-		email: true,
 	},
 	
 	clothing_type: {
 		type: String,
 	},
 	
+	//Name of image inside clothes_images folder
 	image: {
-		contentType: String,
-		data: Buffer, 
+		type: String,
 	},
 	
 	warmth: {
@@ -34,6 +33,7 @@ var ClothesSchema = mongoose.Schema({
 var Clothes = module.exports = mongoose.model('Clothes', ClothesSchema);
 
 module.exports.createClothes = function(Clothes, callback){
-	Clothes.save(callback);
+	Clothes.save(callback, function(callback, err){
+		if (err) throw err;
+	});
 }
-
