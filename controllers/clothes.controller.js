@@ -1,4 +1,5 @@
 var Cloths = require ('../models/clothes');
+var hanger = require ('../models/hanger.module')
 
 exports.getOutfit = function (req, res) {
     var accessories_list = [];
@@ -27,7 +28,7 @@ exports.getOutfit = function (req, res) {
 
                 if (i == results.length - 1) {
                     var context = {
-                        accessorie: accessories_list[Math.floor(Math.random() * accessories_list.length)],
+                        accessory: accessories_list[Math.floor(Math.random() * accessories_list.length)],
                         tops: tops_list[Math.floor(Math.random() * tops_list.length)],
                         bottoms: bottoms_list[Math.floor(Math.random() * bottoms_list.length)]
                     }
