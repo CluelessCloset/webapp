@@ -1,13 +1,14 @@
 var Hanger = require('mongoose').model('Hanger');
 
 exports.poll = function(req, res) {
-    Hanger.findOne({
+    Hanger.findOneAndUpdate({
         email: req.query.email,
         selected: true
-    },
-    function(err, hanger) {
+    }, {selected: false}, function(err, hanger){
         if (err) {
             return res.json((err));
+        } else if (!hanger) {
+            return res.json({});
         } else {
             return res.json({"hanger": hanger.hanger});
         }

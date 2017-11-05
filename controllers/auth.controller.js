@@ -14,7 +14,7 @@ passport.use(new BasicStrategy(
                 if (err) { return callback(err); }
 
                 if (!isMatch) { return callback(null, false); }
-				
+
                 return callback(null, user);
             });
         });
