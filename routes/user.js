@@ -8,7 +8,7 @@ var authController = require('../controllers/auth.controller');
 var Clothes = require('../models/clothes');
 //Get main page once logged in
 //From here all available actions are able to be viewed
-router.get('/', authController.isAuthenticated, function(req, res){
+router.get('/', function(req, res){
 	var accessories_list = [];
 	var tops_list = [];
 	var bottoms_list = [];
@@ -68,8 +68,6 @@ router.get('/', authController.isAuthenticated, function(req, res){
 var upload = multer({ dest: 'public/clothes_images'});
 
 router.post('/add_clothes', upload.single('img_url'), function(req, res){	
-	console.log(req.body);
-	
 	//Gets all of form input and stores it into variables
 	var name = req.body.clothing_name;
 	var clothing_type = req.body.clothing_type;
@@ -90,8 +88,8 @@ router.post('/add_clothes', upload.single('img_url'), function(req, res){
 		var newClothes = new Clothes({
 			name: name,
 			clothing_type: clothing_type,
-			warmth_rating: warmth_rating,
-			water_resistant : water_resistant,
+			warmth: req.body.warmthInputSlider,
+			rain_resistant : water_resistant,
 			image: req.file.filename,
 			owner_email: req.session.email,
 		});

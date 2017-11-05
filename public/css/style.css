@@ -90,3 +90,7 @@
 	max-height: 200px;
 	max-width: 70%;
 }
+
+.legendForWarmthInput{
+display: block;
+}

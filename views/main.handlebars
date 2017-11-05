@@ -164,9 +164,12 @@
 							<option id="pants" name="pants">Bottom</option>
 						</select>
 					</div>
-					<label>Specific Description:</label>
+					<label>Warmth Clothing Provides:</label>
 					
-					<input  name="warmthInputSlider" class = "warmthInputSlider" id="warmthInputSlider" step="10" data-slider-id='warmthInputSlider' type="range" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="5"/>
+					<div class = "legendForWarmthInput">
+						<div class = "lowLegend">Low</div><div class = "highLegend">High</div>
+					</div>
+					<input  name="warmthInputSlider" class = "warmthInputSlider" step = "1" max = "10" min = "0" id="warmthInputSlider" data-slider-id='warmthInputSlider' type="range" data-slider-min="0" data-slider-max="10" data-slider-step="1"/>
 					
 					<label>Water Resistant?</label>
 					<label class="radio-inline">
