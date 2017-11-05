@@ -15,3 +15,12 @@ function randomizeOutfit(){
 	$("#pants_slides").carousel(getRandomInt(0, total_pants));
 	console.log();
 }
+
+window.onLoad = function(){
+
+}
+
+function updateWarmthValueRange(){
+	console.log("Value: " + $('#warmthInputSlider').val());
+	$('#warmthInputSlider').text($('#warmthInputSlider').val());
+}
